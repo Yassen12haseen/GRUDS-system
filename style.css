@@ -1,0 +1,295 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track{
+    background-color: #13131a;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #31a499;
+    border-radius: 10px;
+}
+.GRUDS-system{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: #13131a;
+    color: #EEEEEE;
+}
+.gruds-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+.gruds-title h1{
+    font-size: 2.8rem;
+    font-weight: 600;
+}
+.gruds-title p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.gruds-inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.gruds-inputs input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #393E46;
+    padding: 0  1rem;
+    color: #EEEEEE;
+    font-size: 1rem;
+    outline: none;
+    font-weight: 300;
+}
+.gruds-inputs button , .gruds-outputs-search-box button{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #31a499;
+    border: none;
+    color: #EEEEEE;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+.gruds-inputs button:hover , .gruds-outputs-search-box button:hover{
+    background-color: #3dc6b8;
+}
+
+.gruds-inputs-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.gruds-inputs-total input{
+    width: 20%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #393E46;
+    padding: 0  1rem;
+    color: #EEEEEE;
+    font-size: 1rem;
+    font-weight: 300;
+    outline: none;
+}
+.btn-total{
+    padding: 0 1rem;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.201);
+    border: none;
+    color: #EEEEEE;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gruds-inputs input::placeholder{
+    color: #EEEEEE;
+}
+
+.gruds-outputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.gruds-outputs-search-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.gruds-outputs-search-box input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #393E46;
+    padding: 0  1rem;
+    color: #EEEEEE;
+    font-size: 1rem;
+    outline: none;
+    font-weight: 300;
+}
+.gruds-outputs-search-box input::placeholder{
+    color: #EEEEEE;
+}
+.gruds-outputs-search-box-btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.gruds-outputs-search-box button{
+    width: 43%;
+    font-size: 1rem;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0.4rem;
+}
+thead{
+    background-color: #393e4655;
+    color: #EEEEEE;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+td, th{
+    margin: 1rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: #393e4655;
+    color: #EEEEEE;
+}
+table #btn-update , table #btn-delete{
+
+    padding: 0.5rem;
+    border-radius: 20px;
+    color: #31a499;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+table #btn-delete{
+    color: rgba(255, 0, 0, 0.543);
+}
+table #btn-delete:hover{
+    color: rgb(255, 0, 0);
+}
+table #btn-update:hover{
+    color: #3dc6b8;
+}
+
+#btn-delete-all{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.201);
+    border: none;
+    color: #EEEEEE;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    display: none;
+}
+#btn-delete-all:hover{
+    background-color: rgba(255, 0, 0, 0.607);
+}
+@media screen and (max-width: 850px) {
+    .GRUDS-system{
+        padding: 2rem;
+    }
+    .gruds-inputs-total input{
+        width: 30%;
+    }
+    .gruds-inputs-total span{
+        width: 65%;
+    }
+    .gruds-outputs-search-box input{
+        width: 100%;
+    }
+    table{
+        font-size: 0.9rem;
+    }
+    table #btn-update , table #btn-delete{
+        font-size: 0.9rem;
+    }
+    thead{
+        font-size: 0.8rem;
+    }
+    th,td{
+        margin: 0.5rem;
+        padding: 1rem 0.3rem;
+        width: fit-content;
+    }
+
+    
+}
+@media  (max-width: 620px) {
+    .GRUDS-system{
+        padding: 1rem;
+    }
+
+    .gruds-inputs-total input{
+        width: 47%;
+    }
+    .gruds-inputs-total span{
+        width: 100%;
+    }
+    .gruds-outputs-search-box input{
+        width: 100%;
+    }
+    .gruds-outputs-search-box-btns button{
+        font-size:  0.8rem; ;
+        font-weight: 600;
+    }
+    table{
+        font-size: 0.8rem;
+    }
+    table #btn-update , table #btn-delete{
+        font-size: 0.8rem;
+    }
+    thead{
+        font-size: 0.7rem;
+    }
+    th,td{
+        margin: 0.5rem;
+        padding: 1rem 0.3rem;
+        width: fit-content;
+    }
+    th{
+        font-weight: 700;
+    }
+    td{
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 500px) {
+    #sas1 , #sas2 , #sas3{
+        display: none;
+    }
+}

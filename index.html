@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUDS system</title>
+    <link rel="icon" href="GRUDS-system-icon-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="GRUDS-system">
+        
+        <div class="gruds-title">
+            <h1>GRUDS</h1>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+        
+        <div class="gruds-inputs">
+            <input type="text" id="inp-title" placeholder="title">
+            <div class="gruds-inputs-total">
+                <input onkeyup="GetTotal()" type="number" id="inp-price" placeholder="price">
+                <input onkeyup="GetTotal()" type="number" id="inp-taxes" placeholder="taxes">
+                <input onkeyup="GetTotal()" type="number" id="inp-ads" placeholder="ads">
+                <input onkeyup="GetTotal()" type="number" id="inp-discount" placeholder="discount">
+                <span class="btn-total" id="btn-total">
+                    <span>total : </span> <span style="margin-left: 4px;" id="total-price"> </span>
+                </span>
+            </div>
+            <input type="number" id="inp-count" placeholder="count">
+            <input type="text" id="inp-category" placeholder="category">
+            <button onclick="CreateProduct()" id="btn-create">Create</button>
+        </div>
+        
+        <div class="gruds-outputs">
+            <div class="gruds-outputs-search-box">
+                <input onkeyup="SearchData(this.value)" type="search" id="inp-search" placeholder="search by title">
+                <div class="gruds-outputs-search-box-btns">
+                    <button onclick="GetSearchMode(this.id)" id="btn-search-title">search by title</button>
+                    <button onclick="GetSearchMode(this.id)" id="btn-search-category">search by category</button>
+                </div>
+            </div>
+
+            <button onclick="DeleteAll()" id="btn-delete-all">delete all <span id="btn-delete-all-span"></span></button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th id="sas1">taxes</th>
+                        <th id="sas2">ads</th>
+                        <th id="sas3">discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
