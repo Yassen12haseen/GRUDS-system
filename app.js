@@ -48,32 +48,36 @@ function CreateProduct(){
         count : inp_count.value,
         category : inp_category.value,
     };
-if (porduct.title != "" && porduct.price != "" && porduct.category != "" && porduct.count <= 100){
-    
-    if (mode == "create"){
-        if (Number(porduct.count) > 1){
-            for (let x = 0 ; x < Number(porduct.count) ; x++){
-                    data_products.push(porduct);
-                    localStorage.setItem("porduct" ,JSON.stringify(data_products));
-                };
+if (porduct.title != "" && porduct.price != "" && porduct.category != "" ){
+    if (porduct.count <= 100){
+        if (mode == "create"){
+            if (Number(porduct.count) > 1){
+                for (let x = 0 ; x < Number(porduct.count) ; x++){
+                        data_products.push(porduct);
+                        localStorage.setItem("porduct" ,JSON.stringify(data_products));
+                    };
+            }else{
+                data_products.push(porduct);
+                localStorage.setItem("porduct" ,JSON.stringify(data_products));       
+            };
+            ClearData();
+            ReadData();
         }else{
-            data_products.push(porduct);
-            localStorage.setItem("porduct" ,JSON.stringify(data_products));       
+            data_products[index] = porduct;
+            localStorage.setItem("porduct" ,JSON.stringify(data_products));
+            ClearData();
+            ReadData();
+            mode = "create";
+            btn_create.innerHTML = "Create";
+            inp_count.style.display = "block";
         };
-        ClearData();
-        ReadData();
+        
     }else{
-        data_products[index] = porduct;
-        localStorage.setItem("porduct" ,JSON.stringify(data_products));
-        ClearData();
-        ReadData();
-        mode = "create";
-        btn_create.innerHTML = "Create";
-        inp_count.style.display = "block";
+     alert("The count must be <= 100)");   
     };
 
 }else{
-    alert("please check the data");
+    alert("Please check the data");
 };
 };
 
