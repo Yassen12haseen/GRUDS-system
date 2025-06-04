@@ -1,4 +1,4 @@
-
+    
 
 let inp_title = document.getElementById("inp-title");
 let inp_price = document.getElementById("inp-price");
