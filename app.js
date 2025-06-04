@@ -73,7 +73,7 @@ if (porduct.title != "" && porduct.price != "" && porduct.category != "" ){
         };
         
     }else{
-     alert("The count must be <= 100)");   
+     alert("The count must be <= 100 ");   
     };
 
 }else{
@@ -111,7 +111,6 @@ function ReadData(){
                         </tr>
                     `
         };
-        console.log("mobile");
     }else{
         for (let i= 0 ; i < data_products.length ; i++){
                     tbody +=`
@@ -129,7 +128,6 @@ function ReadData(){
                         </tr>
                     `
         };
-        console.log("pc");
     }
     document.getElementById("tbody").innerHTML = tbody;
     let btnbtn_delete_all = document.getElementById("btn-delete-all");
